@@ -5,7 +5,9 @@ def q3 =
     val cells = lines.map(_.toCharArray.toList)
     cells.transpose
 
-  def mostCommon(c: List[Char]) = c.count(_ == '1') >= c.count(_ == '0')
+  def mostCommon(c: List[Char]) =
+    val (ones, zeros) = c.partition(_ == '1')
+    ones.size >= zeros.size
 
   val p1 =
     val gammaList   = columns(lines).map(mostCommon)
